@@ -1,0 +1,12 @@
+.container {
+    width: 1080px;
+    border: 1px solid black;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.cards {
+    height: 90vh;
+    width: 1080px;
+    border: 1px solid black;
+}
