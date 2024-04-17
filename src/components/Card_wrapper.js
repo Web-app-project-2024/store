@@ -12,7 +12,7 @@ function Card_wrapper() {
         id: i,
         title: `Карточка ${i}`,
         imageUrl: `ссылка${i}`,
-        price: `$${i}`,
+        price: `${i}`,
       });
     }
     return data;
@@ -21,20 +21,20 @@ function Card_wrapper() {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 50;
 
-//   useEffect(() => {
-//     // Функция для загрузки данных из MongoDB
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch('/api/cards');
-//         const data = await response.json();
-//         setCardData(data);
-//       } catch (error) {
-//         console.error('Ошибка при загрузке данных:', error);
-//       }
-//     };
+  useEffect(() => {
+    // Функция для загрузки данных из MongoDB
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/laptops');
+        const data = await response.json();
+        setCardData(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+      }
+    };
 
-//     fetchData();
-//   }, []); 
+    fetchData();
+  }, []); 
   // Функция для отображения карточек на текущей странице
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
@@ -57,8 +57,8 @@ function Card_wrapper() {
         {currentCards.map((card) => (
           <Card
             key={card.id}
-            title={card.title}
-            imageUrl={card.imageUrl}
+            title={card.name}
+            imageUrl={card.imgUrl}
             price={card.price}
           />
         ))}

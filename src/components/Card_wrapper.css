@@ -1,12 +1,17 @@
 .container {
     width: 1080px;
     border: 1px solid black;
-    height: 100vh;
     margin: 0 auto;
 }
 
 .cards {
-    height: 90vh;
+    min-height: 100px;
     width: 1080px;
     border: 1px solid black;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.navigation {
+    height: 30px;
 }
